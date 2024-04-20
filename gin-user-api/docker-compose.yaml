@@ -1,0 +1,25 @@
+services:
+  go-app:
+    container_name: gin-user-api-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - GIN_MODE=release
+    env_file:
+      - .env
+
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: account
+      MYSQL_ROOT_PASSWORD: account
+      MYSQL_USER: account
+      MYSQL_PASSWORD: account
+    volumes:
+      - ./mysql-init.sql:/docker-entrypoint-initdb.d/init.sql

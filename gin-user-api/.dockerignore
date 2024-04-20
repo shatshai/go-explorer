@@ -1,0 +1,24 @@
+# Exclude editor-specific files and directories
+.vscode/
+.idea/
+*.iml
+
+# Exclude build artifacts and binaries
+bin/
+*.exe
+*.out
+
+# Exclude version control system files
+.git/
+.gitignore
+
+# Exclude Docker related files (Dockerfile and docker-compose.yaml)
+Dockerfile
+docker-compose.yaml
+
+# Exclude .env file (sensitive environment variables)
+.env
+
+# Exclude documentation and test files
+docs/
+test/
